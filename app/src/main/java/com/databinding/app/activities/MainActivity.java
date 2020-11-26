@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
     private MainViewModel viewModel;
-//gdfgfdfghfghfghfghfgh
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +24,8 @@ public class MainActivity extends AppCompatActivity {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
         viewModel = new ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(this.getApplication()))
                 .get(MainViewModel.class);
-        binding.setUser(viewModel.getUser());
+        binding.setUser(viewModel.getUser());   /*todo : agar hme user model se data use krna hai*/
+        //binding.includedLayout.lblAge.setText("Hello from include layout");
+        binding.setMainViewModel(viewModel); /*todo : agar hme ViewModel se data use krna hai*/
     }
 }
